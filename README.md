@@ -9,7 +9,7 @@
 ```
 python -m ui
 ```
-mimo -s ses_125addc5bffeRbk9MRYyHEhHjk
+
 ---
 
 ## Возможности
