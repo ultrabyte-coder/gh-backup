@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gh-backup"
+version = "1.0.0"
+description = "GitHub account backup tool with TUI"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = [
+    "textual==8.2.3",
+    "httpx==0.28.1",
+    "pydantic==2.12.5",
+    "github-backup==0.61.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.0.0",
+    "mypy>=1.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+gh-backup = "ui.main:main"
+
+[tool.setuptools.packages]
+find = {}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+addopts = "-v --tb=short --ignore=backups"
+
+[tool.ruff]
+exclude = ["backups", ".venv", ".git", "__pycache__"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501", "F841"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501", "F841"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true

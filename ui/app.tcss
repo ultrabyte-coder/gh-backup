@@ -1,0 +1,78 @@
+Screen {
+    background: $surface;
+}
+
+#top-bar {
+    dock: top;
+    height: 3;
+    background: $surface-darken-1;
+    border-bottom: $primary;
+}
+
+#top-bar > .tab-btn {
+    width: auto;
+    margin: 0 1;
+}
+
+#top-bar > .tab-btn.-active {
+    background: $primary;
+    color: $text;
+    text-style: bold;
+}
+
+#content-area {
+    height: 1fr;
+}
+
+.tab-panel {
+    height: 1fr;
+}
+
+.tab-panel.-hidden {
+    display: none;
+}
+
+.card {
+    background: $boost;
+    border: $primary 40%;
+    padding: 1 2;
+    margin: 1 2;
+}
+
+.error-box {
+    background: $error 20%;
+    border: solid $error;
+    padding: 1 2;
+    margin: 1 2;
+}
+
+.warning-box {
+    background: $warning 20%;
+    border: solid $warning;
+    padding: 1 2;
+    margin: 1 2;
+}
+
+.success-box {
+    background: $success 20%;
+    border: solid $success;
+    padding: 1 2;
+    margin: 1 2;
+}
+
+.info-row {
+    height: auto;
+    margin: 0 2;
+    margin-top: 1;
+}
+
+.info-label {
+    color: $text-muted;
+    width: 20;
+}
+
+#backup-log, #restore-log {
+    background: $surface-darken-1;
+    border: tall $primary 30%;
+    margin: 0 2;
+}
