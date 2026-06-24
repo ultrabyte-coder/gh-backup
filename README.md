@@ -86,7 +86,7 @@ graph TD
 ### 1. Установка
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/ultrabyte-coder/-gh-backup
 cd gh-backup
 python3 -m venv .venv
 source .venv/bin/activate
